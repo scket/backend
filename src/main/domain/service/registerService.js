@@ -11,7 +11,10 @@ class RegisterService {
   }
   register() {
     const userRepository = new UserRepository();
-    return userRepository.insert(this.registerRequestBody);
+    return userRepository.insert(
+      this.registerRequestBody.name,
+      this.registerRequestBody.homeAddress,
+      this.registerRequestBody.mailAddress);
   }
 }
 
