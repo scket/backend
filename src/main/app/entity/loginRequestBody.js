@@ -4,7 +4,7 @@
  * パスワードは不要かも
  */
 class LoginRequestBody {
-  construtor(nameOrAddress, password) {
+  constructor(nameOrAddress, password) {
     this.nameOrAddress = nameOrAddress;
     this.password = password;
   }

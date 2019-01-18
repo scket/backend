@@ -3,7 +3,7 @@
  * スレッド投稿リクエストボディ
  */
 class PostThreadRequestBody {
-  construtor(title, userName, content) {
+  constructor(title, userName, content) {
     this.title = title;
     this.userName = userName;
     this.content = content;
