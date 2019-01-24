@@ -6,12 +6,12 @@ class LoginService {
   constructor(loginRequestBody) {
     this.loginRequestBody = loginRequestBody;
   }
-  run(){
+  async run(){
     return this.login();
   }
-  login() {
+  async login() {
     const userRepository = new UserRepository();
-    return userRepository.select(this.loginRequestBody);
+    return userRepository.select(this.loginRequestBody.mailAddress);
   }
 }
 

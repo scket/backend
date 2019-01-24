@@ -1,24 +1,17 @@
 'use strict';
 /**
  * ユーザログインリクエストボディ
- * パスワードは不要かも
+ * とりあえずmail addressで
  */
 class LoginRequestBody {
-  constructor(nameOrAddress, password) {
-    this.nameOrAddress = nameOrAddress;
-    this.password = password;
+  constructor(mailAddress) {
+    this.mailAddress = mailAddress;
   }
-  get getNameOrAddress() {
-    return this.nameOrAddress;
+  get getMailAddress() {
+    return this.mailAddress;
   }
-  get getPassword() {
-    return this.Password;
-  }
-  set setNameOrAddress(nameOrAddress) {
-    this.nameOrAddress = nameOrAddress;
-  }
-  set setPassword(password) {
-    this.password = password;
+  set setMailAddress(mailAddress) {
+    this.mailAddress = mailAddress;
   }
 }
 
