@@ -12,7 +12,6 @@ router.post('/',function(req,res){
   const registerRequestBody = new RegisterRequestBody(req.body.name, req.body.homeAddress, req.body.mailAddress);
   const registerService = new RegisterService(registerRequestBody);
   sendResponse(registerService, res);
-
 });
 
 async function sendResponse(registerService, res) {

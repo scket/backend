@@ -6,12 +6,15 @@ class PostThreadService {
   constructor(postThreadRequestBody) {
     this.postThreadRequestBody = postThreadRequestBody;
   }
-  run(){
+  async run(){
     return this.postThread();
   }
-  postThread() {
+  async postThread() {
     const threadRepository = new ThreadRepository();
-    return threadRepository.insert(this.postThreadRequestBody);
+    return threadRepository.insert(
+      this.postThreadRequestBody.title,
+      this.postThreadRequestBody.userName,
+      this.postThreadRequestBody.content);
   }
 }
 

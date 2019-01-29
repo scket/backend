@@ -22,7 +22,6 @@ class UserRepository {
     } finally {
       await connection.end();
     }
-
   }
   async select(mailAddress){
     const connection = await this.connect();
