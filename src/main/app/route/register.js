@@ -11,10 +11,12 @@ const RegisterService = require('../../domain/service/registerService');
 router.post('/',function(req,res){
   const registerRequestBody = new RegisterRequestBody(req.body.name, req.body.homeAddress, req.body.mailAddress);
   const registerService = new RegisterService(registerRequestBody);
-  registerService.run();
-    res.json({
-        message: registerRequestBody.name
-    });
+  sendResponse(registerService, res);
+
 });
+
+async function sendResponse(registerService, res) {
+  res.json(await registerService.run())
+}
 
 module.exports = router;

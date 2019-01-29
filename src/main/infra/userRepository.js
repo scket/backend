@@ -3,10 +3,6 @@
 const mysql = require('promise-mysql');
 
 class UserRepository {
-  // constructor(){
-  //   this.connection = await this.connect();
-  //   console.log('connect');
-  // }
   async connect() {
     return mysql.createConnection({
      host: 'rds-mysql-suketto.cimvjuntujjq.us-east-1.rds.amazonaws.com',
@@ -28,7 +24,7 @@ class UserRepository {
     }
 
   }
-  async select(mailAddress, callback){
+  async select(mailAddress){
     const connection = await this.connect();
     const sql = 'SELECT * FROM user WHERE mailAddress = ?';
     const values = [mailAddress];

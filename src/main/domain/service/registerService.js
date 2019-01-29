@@ -6,10 +6,10 @@ class RegisterService {
   constructor(registerRequestBody) {
     this.registerRequestBody = registerRequestBody;
   }
-  run(){
+  async run(){
     return this.register();
   }
-  register() {
+  async register() {
     const userRepository = new UserRepository();
     return userRepository.insert(
       this.registerRequestBody.name,
