@@ -23,8 +23,18 @@ class ThreadRepository {
       await connection.end();
     }
   }
-  async select(){
-
+  async select(id){
+    const connection = await this.connect();
+    const sql = 'SELECT * FROM thread WHERE id = ?';
+    const values = [id];
+    try{
+      const result = await connection.query(sql, values);
+      return result[0];
+    } catch(e) {
+      console.log(e);
+    } finally {
+      await connection.end();
+    }
   }
   async delete(){
 

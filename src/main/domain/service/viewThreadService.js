@@ -3,15 +3,15 @@
 const ThreadRepository = require('../../infra/ThreadRepository');
 
 class ViewThreadService {
-  constructor(threadId) {
-    this.theadId = threadId;
+  constructor(id) {
+    this.id = id;
   }
-  run(){
-    return this.viewThread();
+  async run(){
+    return this.viewThread(this.id);
   }
-  viewThread() {
+  async viewThread(id) {
     const threadRepository = new ThreadRepository();
-    return threadRepository.select(this.threadId);
+    return threadRepository.select(id);
   }
 }
 
